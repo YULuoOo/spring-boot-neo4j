@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form action="http://localhost:8080/advance/gongtong" method="POST" >
+    <label for="name1">用户名1:</label><br/>
+    <input placeholder="name1" type="text" name="name1" value="" id="name1" tabindex="1"/>
+    <br/><label for="name2">用户名2:</label><br/>
+    <input placeholder="name2" type="text" name="name2" value="" id="name2" tabindex="2" />
+    <button type="submit" class="flatbtn-blu"  tabindex="3" >查看共同关注</button>
+</form>
+
+<Button id="login-bt2"  class="waves-effect waves-button waves-float" onclick="window.location='/advance/guanzhuzuiduo'">关注最多的人</Button>
+<Button id="login-bt3"  class="waves-effect waves-button waves-float" onclick="window.location='/advance/beiguanzhuzuiduo'">被关注最多的人</Button>
+<Button id="login-bt4"  class="waves-effect waves-button waves-float" onclick="window.location='/advance/aihaozuiduo'">兴趣爱好最多的人</Button>
+<form action="http://localhost:8080/advance/shortest" method="POST" >
+    <label for="name3">用户名1:</label><br/>
+    <input placeholder="name3" type="text" name="name3" value="" id="name3" tabindex="1"/>
+    <br/><label for="name4">用户名2:</label><br/>
+    <input placeholder="name4" type="text" name="name4" value="" id="name4" tabindex="2" />
+    <button type="submit" class="flatbtn-blu"  tabindex="3" >查看最短路径</button>
+</form>
+</body>
+</html>

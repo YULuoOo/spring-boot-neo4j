@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>login</title>
+
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="https://cdn.bootcss.com/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet"/>
+	<link href="https://cdn.bootcss.com/node-waves/0.7.5/waves.min.css" rel="stylesheet"/>
+	<link href="/checkbix/css/checkbix.min.css" rel="stylesheet"/>
+	<link href="/static/css/login.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div id="login-window">
+	<form action="http://localhost:8080/user/userLogin" method="post">
+	<div class="input-group m-b-20">
+		<span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+		<div class="fg-line">
+			<input id="username" type="text" class="form-control" name="username" placeholder="帐号" required="required" autofocus="autofocus" value="jwmzuvwa"/>
+		</div>
+	</div>
+	<div class="input-group m-b-20">
+		<span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+		<div class="fg-line">
+			<input id="password" type="password" class="form-control" name="password" placeholder="密码" required="required" value="123456"/>
+		</div>
+	</div>
+	<div class="clearfix">
+	</div>
+	<Button id="login-bt"  class="waves-effect waves-button waves-float"><i class="zmdi zmdi-arrow-forward"></i></Button>
+	</form>
+</div>
+<a href="register.html" id="to_register" >尚未注册？去注册</a>
+<script src="/jquery.1.12.4.min.js"></script>
+<script src="/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<script src="/waves-0.7.5/waves.min.js"></script>
+<script src="/checkbix/js/checkbix.min.js"></script>
+<script src="/static/js/login.js"></script>
+<script type="text/javascript">
+	Checkbix.init();
+</script>
+
+</body>
+</html>

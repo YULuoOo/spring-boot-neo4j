@@ -1,0 +1,38 @@
+body,table{
+    font-size:18px;
+}
+table{
+    table-layout: fixed;
+    empty-cells:show;
+    border-collapse: collapse;
+    border-width: 1px;
+    width: min-content;
+    border-radius:5px;
+}
+td{
+    height:30px;
+    width:60px;
+    text-align: center;
+}
+h1,h2,h3{
+    font-size:12px;
+    margin:0;
+    padding:0;
+}
+.table{
+    border:1px solid #cad9ea;
+    color:#666;
+}
+
+.table thead,.table th {
+    background-repeat:repeat-x;
+    height:40px;
+    background-color: #f5e79e;
+}
+.table td,.table th{
+    border:1px solid #cad9ea;
+    padding:0 1em 0;
+}
+.table tr.alter{
+    background-color:#f5fafe;
+} 

@@ -1,0 +1,126 @@
+.personal_img{
+    margin-top: 5rem;
+    margin-left: 20px;
+    text-align:left;
+    float: left;
+}
+.personal_info{
+    padding: 10px;
+    height: fit-content;
+    border: 1.5px solid #FEC93F;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 300px;
+    font-size: 20px;
+    background-color: #fcfcfc;
+    font-family: 微软雅黑, serif;
+    color: #2f2f2f;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.username{
+    margin-top: 10px;
+    font-size: 25px;
+    color: #2f2f2f;
+    font-family: 微软雅黑, serif;
+
+}
+.personal_bg{
+    width: auto;
+    height: 400px;
+    margin-top: 0px;
+    padding-top: 20px;
+}
+.personal_relation{
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    height: fit-content;
+    border: 1.5px solid #FEC93F;
+    background-color: #fcfcfc;
+}
+
+
+
+
+a{
+    color: black;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+#tab{
+    border: 1px solid #ddd;
+    box-shadow: 0 0 2px #ddd;
+    /*处理超出的内容*/
+    overflow: hidden;
+    width:available;
+    text-align: left;
+}
+
+/*选项卡的头部*/
+#tab-header{
+    background-color: #FEC93F;
+    height: 33px;
+    text-align: center;
+    position: relative;
+}
+#tab-header ul{
+    width: 500px;
+    position: absolute;
+    left: -1px;
+}
+
+#tab-header ul li{
+    float: left;
+    width: 20%;
+    height: 33px;
+    line-height: 33px;
+    padding: 0 1px;
+    border-bottom: 1px solid #dddddd;
+    border-radius: 5px;
+}
+#tab-header ul li.selected{
+    background-color: white;
+    font-weight: bolder;
+    border-bottom: 0;
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    padding: 0;
+    border-radius: 5px;
+}
+
+#tab-header ul li:hover{
+    color: orangered;
+}
+
+/*主要内容*/
+#tab-content .dom{
+    display: none;
+}
+
+#tab-content .dom ul li{
+    float: left;
+    /*background-color: red;*/
+    margin: 15px 10px;
+    width: 200px;
+}
+
+#tab-content .dom ul li a:hover{
+    color: orange;
+}
+
+.tag {
+    font-size: 15px;
+    border: 2px solid #FEC93F;
+    font-color:#FEC93F ;
+    border-radius: 7px;
+    width: fit-content;
+    display: inline;
+    padding: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>修改资料</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/static/css/modify_info.css" rel="stylesheet"/>
+    <link href="/static/css/button.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="wrapper">
+<div class="container">
+    <div class="row">
+        <div class="panel">
+    <form  action="http://localhost:8080/user/changeInfo" method="post">
+        <div class="col-lg-11 text-center text-info title" style="color: #FFA54F">
+        </div>
+        <div class="col-lg-11" style="height:40px;"></div>
+
+        <div class="col-lg-11 input">
+            <div class="tiptext">性别</div>
+            <input type="text" class="form-control" name="sex" id="sex" placeholder="请输入性别" required="required" autofocus="autofocus"/>
+        </div>
+        <div class="col-lg-11" style="height:20px;"></div>
+        <div class="col-lg-11 input">
+            <div class="tiptext">所在地</div>
+            <input type="text" class="form-control" name="address" id="address" placeholder="请输入所在地" required="required" autofocus="autofocus"/>
+        </div>
+        <div class="col-lg-11" style="height:20px;"></div>
+        <div class="col-lg-11 input">
+            <div class="tiptext">年龄</div>
+            <input type="text" class="form-control" name="age" id="age" placeholder="请输入年龄" required="required" autofocus="autofocus"/>
+        </div>
+        <div class="col-lg-11" style="height:20px;"></div>
+        <div class="col-lg-11 input">
+            <div class="tiptext">签名</div>
+            <textarea type="text" style="height: 100px" class="form-control" name="sign" id="sign" placeholder="请输入签名" required="required" autofocus="autofocus">请在这里输入</textarea>
+        </div>
+        <div class="col-lg-11" style="height:20px;"></div>
+        <div class="col-lg-11">
+            <button type="submit" id="confirm" class="button button-rounded button-small btn" style="margin-left: 115px" >保存修改</button>
+        </div>
+        <div class="col-lg-11" style="height:20px;"></div>
+    </form>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</body>
+</html>

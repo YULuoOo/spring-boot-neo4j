@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>注册</title>
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.bootcss.com/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet"/>
+    <link href="https://cdn.bootcss.com/node-waves/0.7.5/waves.min.css" rel="stylesheet"/>
+    <link href="/checkbix/css/checkbix.min.css" rel="stylesheet"/>
+    <link href="/static/css/register.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div id="register-window">
+    <form action="http://localhost:8080/user/userRegister" method="post">
+    <div class="input-group m-b-20">
+        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+        <div class="fg-line">
+            <input id="username" type="text" class="form-control" name="username" placeholder="帐号(不超过20字符)" required="required" autofocus="autofocus" value="admin"/>
+        </div>
+    </div>
+    <div class="input-group m-b-20">
+        <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+        <div class="fg-line">
+            <input id="password" type="password" class="form-control" name="password" placeholder="密码（大于6字符小于20字符）" required="required" value="123456"/>
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+        <Button id="register-bt" type="submit" class="waves-effect waves-button waves-float"><i class="zmdi zmdi-arrow-forward"></i></Button>
+    </form>
+</div>
+<a href="login.html" id="to_login" >已注册？去登陆</a>
+<script src="/static/js/jquery.1.12.4.min.js"></script>
+<script src="/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<script src="/waves-0.7.5/waves.min.js"></script>
+<script src="/checkbix/js/checkbix.min.js"></script>
+
+<script src="/static/js/register.js"></script>
+<script type="text/javascript">
+    Checkbix.init();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+.container{
+    margin-top: 110px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+    width:500px;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+
+.input{
+    height: 34px;
+}
+.container .row{
+    width: 440px;
+}
+
+.panel{
+    background-color:#F3F3F3;
+    margin:0;
+    width:403px;
+    height:420px;
+    border:1px solid #CCCCCC;
+}
+
+.title{
+    height:60px;
+    background-color:#FFA54F;
+    color:white;
+    padding-top:10px;
+    width:100%;
+
+}
+
+.tiptext{
+    float:left;
+    display:block;
+    width:25%;
+    margin-top:10px;
+}
+
+.form-control{
+    margin:auto;
+    float:right;
+    width:70%;
+}
+
+.btn{
+    width:150px;
+    margin-left:115px;
+    margin-top:0px;
+}
+
+.tip{
+    height:21px;
+    margin-left:120px;
+    color:red;
+}
+

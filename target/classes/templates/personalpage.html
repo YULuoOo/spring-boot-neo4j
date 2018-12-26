@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <title>Personalpage</title>
+    <meta charset="UTF-8"/>
+    <script src="/static/js/jquery-2.1.1.min.js"></script>
+    <script src="/static/js/avalon.js"></script>
+    <script src="/static/js/personalpage.js"></script>
+    <!--button css-->
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/button.css}"/>
+    <!-- personal page css-->
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/personalpage.css}"/>
+    <!-- Bootstrap-Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
+    <!-- Font-Awesome-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/static/css/table.css"/>
+    <link rel="stylesheet" href="/static/css/public.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css"/>
+    <script>
+        $(function() {
+            $( "#tabs" ).tabs();
+        });
+    </script>
+</head>
+<body >
+<!--导航栏部分（本来想导外面文件进去但是死活检测不到…）-->
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            Blog
+        </a>
+        <!-- 导航下拉按钮 -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <!-- s 左侧导航 -->
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link"><!-- 占位 --></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/" >首页</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/post">博客</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+            </ul>
+            <!-- e 左侧导航 -->
+
+        </div>
+    </div>
+</nav>
+<!--导航部分结束-->
+<div class="col-md-12 container container-fluid personal_bg" style="background: #FFF68F;">
+<div class="container container-fluid personal_img " style="width: 200px" >
+    <img src="/static/img/personalImg_example.png" width="200" height="200" style="border-radius: 5px"/>
+    <p th:text="${session.user.getUsername()}" class="username"></p>
+</div>
+</div>
+<div style="display:-moz-inline-box">
+<div class="personal_info " style="display: inline-block" >
+<p style="text-align: center">个人信息</p>
+    <ul>
+        <li  th:text="'昵称:'+${session.user.getUsername()}">昵称：</li>
+        <li  th:if="${session.user.getSex()!=null}" th:text="'性别:'+${session.user.getSex()}">性别：</li>
+        <li  th:if="${session.user.getAge()!=0}" th:text="'年龄:'+${session.user.getAge()}">年龄：</li>
+        <li th:if="${session.user.getAddress()!=null}">所在地:</li>
+        <li  th:text="${session.user.getAddress()}">a</li>
+        <li th:if="${session.user.getSign()!=null}">个性签名:</li>
+        <li  th:text="${session.user.getSign()}">a</li>
+    </ul>
+
+   <div style="text-align: center">
+       <a  th:href="@{http://localhost:8080/modifyInfo/}" class="button  button-rounded " style="text-align: center;">修改资料</a>
+   </div>
+</div>
+<div class="col-md-7 personal_relation " style="display:inline-block;width: 1200px;" >
+<div id="tab " >
+<!--选项的头部-->
+<div id="tab-header">
+    <ul>
+        <li class="selected">关注</li>
+        <li>被关注</li>
+        <li>双向关注</li>
+        <li>同好</li>
+        <li>我的标签</li>
+        <li>搜索用户</li>
+    </ul>
+</div>
+<!--主要内容-->
+<div id="tab-content">
+    <div class="dom" id="dom-follow" ms-controller = "follow" style="display: block;">
+              <ul ms-for = "user in @followlist" >
+            <li>{{user.username}}</li>
+            <li><!--占位--></li>
+                  <li><!--占位--></li>
+            <li><button class="button button-rounded button-small" ms-click="@alert(user.nodeId)" >unfollow</button></li>
+              </ul>
+    </div>
+    <div class="dom" id = "dom-follower" ms-controller = "follower">
+        <ul ms-for = "user in @followerlist">
+            <li>{{user.username}}</li>
+            <li><!--占位--></li>
+            <li><!--占位--></li>
+            <li><button class="button button-rounded button-small" ms-click="@alert(user.nodeId)" >{{user.relation}}</button></li>
+        </ul>
+
+    </div>
+    <div class="dom" id = "dom-follows" ms-controller = "follows">
+        <ul ms-for = "user in @followslist">
+            <li>{{user.username}}</li>
+            <li><!--占位--></li>
+            <li><!--占位--></li>
+            <li><button class="button button-rounded button-small" ms-click="@alert(user.nodeId)" >{{user.relation}}</button></li>
+        </ul>
+
+    </div>
+
+    <div class="dom" id = "dom-tonghao" ms-controller = "tonghao">
+        <div></div>
+        <ul ms-for="tonghao in @tonghaolist" >
+            <li >{{tonghao.username}}</li>
+            <li><!--占位--></li>
+            <li><!--占位--></li>
+            <li><button class="button button-rounded button-small" ms-click="@alert(tonghao.nodeId)">{{tonghao.relation}}</button></li>
+        </ul>
+    </div>
+    <div  class="dom" id ="dom-tags" ms-controller="tags" >
+        <div ms-for="tag in @taglist" style="display:inline;" >
+            <div class="tag"  >{{tag.name}}</div>
+        </div>
+        <br/>
+        <input type="text"  ms-duplex="@tag" placeholder="请输入标签" style="border-radius: 5px; border: 1.5px solid #FFA500;margin-top:20px"/>
+        <button class="button button-rounded " ms-click="@submit" style="margin-left: 10px" >添加标签</button>
+    </div>
+    <div  class="dom" id ="dom-search" ms-controller="search" >
+        <div id="search_name_div" style="display: inline;">
+        <input type="text"  ms-duplex="@name" placeholder="请输入用户名" style="border-radius: 5px; border: 1.5px solid #FFA500;margin-top:20px"/>
+        <button class="button button-rounded " ms-click="@submit_name" style="margin-left: 10px" >搜索</button>
+        </div>
+        <ul ms-for="user in @userlist" >
+            <li >{{user.username}}</li>
+            <li><!--占位--></li>
+            <li><!--占位--></li>
+            <li><button class="button button-rounded button-small" ms-click="@alert(user.nodeId)">{{user.relation}}</button></li>
+        </ul>
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="col-md-12" style="height: 300px"></div>
+<div style="text-align: center">
+    <a  th:href="@{http://localhost:8080/advance/}" class="button  button-rounded " style="text-align: center;">高级功能</a>
+</div>
+<footer class="py-5 bg-dark cus_fixed_bottom">
+</footer>
+</body>
+
+</html>
